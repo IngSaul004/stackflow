@@ -32,7 +32,7 @@ function App() {
         <div className='inicioSesion'>
           <img src={logoimg} alt="Logo" />
           <h1>Salidas Almacen</h1>
-          <h2>Bienvenido</h2>
+          <h2>Bienvenid@</h2>
 
           <form onSubmit={inicioSesion}>
             <input
