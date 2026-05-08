@@ -1,0 +1,129 @@
+.form-card, .tabla-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.form-card h2, .tabla-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.form-botones {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-guardar {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-guardar:hover {
+  background-color: #1558b0;
+}
+
+.btn-cancelar {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-cancelar:hover {
+  background-color: #888;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead {
+  background-color: #1a73e8;
+  color: white;
+}
+
+th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f8ff;
+}
+
+tbody tr:hover {
+  background-color: #e8f0fe;
+}
+.btn-editar {
+  background-color: #f4a100;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.btn-editar:hover {
+  background-color: #d48900;
+}
+
+.btn-eliminar {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #b71c1c;
+}
+
+.sin-datos {
+  color: #aaa;
+  font-style: italic;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,116 +1,63 @@
-/* ===============================
-   CONTENEDOR PRINCIPAL
-================================ */
 .sidebar {
-  width: 230px;
+  width: 220px;
   height: 100vh;
-  background-color: var(--surface-color);
-  color: var(--text-primary);
-  transition: width 0.3s ease;
-  padding: 1rem;
-  box-sizing: border-box;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #1a73e8;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
-/* ===============================
-   SIDEBAR COLAPSADO
-================================ */
-.sidebar.collapsed {
-  width: 72px;
-}
-
-/* ===============================
-   BOTÓN TOGGLE
-================================ */
-.toggle-btn {
-  width: 100%;
-  margin-bottom: 1.5rem;
-  background-color: var(--accent-color);
+.sidebar-logo h2 {
   color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-nav button {
+  background: transparent;
   border: none;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.25s;
-}
-
-.toggle-btn:hover {
-  background-color: var(--accent-hover);
-}
-
-/* Botón centrado al colapsar */
-.sidebar.collapsed .toggle-btn {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 1.5rem auto;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===============================
-   LISTA DEL MENÚ
-================================ */
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* ===============================
-   ITEMS DEL MENÚ
-================================ */
-.sidebar li {
-  padding: 0.75rem 0.8rem;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  transition:
-    background-color 0.25s,
-    color 0.25s;
-  display: flex;
-  align-items: center;
-}
-
-/* Hover general */
-.sidebar li:hover {
-  background-color: var(--accent-color);
   color: white;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-/* Texto del item */
-.sidebar li span {
-  transition: opacity 0.2s ease;
+.sidebar-nav button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* ===============================
-   TEXTO OCULTO AL COLAPSAR
-================================ */
-.sidebar.collapsed li span {
-  display: none;
+.sidebar-footer {
+  margin-top: auto;
 }
 
-/* Ajuste visual de los items colapsados */
-.sidebar.collapsed li {
-  justify-content: center;
+.logout-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  width: 100%;
   padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
 }
 
-/* ===============================
-   CERRAR SESIÓN
-================================ */
-.sidebar li.logout {
-  margin-top: 2rem;
-  color: #f87171;
-}
-
-/* Hover cerrar sesión */
-.sidebar li.logout:hover {
-  background-color: #f87171;
-  color: white;
+.logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
