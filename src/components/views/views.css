@@ -1,0 +1,225 @@
+/* ===== CONTENEDOR BASE ===== */
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 960px;
+}
+
+.view-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ===== ALERTAS ===== */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  gap: 1rem;
+}
+
+.alert--success {
+  background-color: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  color: #4ade80;
+}
+
+.alert--error {
+  background-color: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  color: #f87171;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+  opacity: 0.7;
+  min-width: 0;
+  height: auto;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.alert-close:hover { opacity: 1; background: none; }
+
+/* ===== TARJETA DE FORMULARIO ===== */
+.form-card {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 520px;
+}
+
+.view-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.7rem 0.875rem;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: none;
+  height: auto;
+  text-align: left;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.form-group select option {
+  background-color: var(--surface-color);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.875rem;
+  background-color: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.btn-submit {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  padding: 0.7rem 2rem;
+  height: auto;
+  font-size: 0.95rem;
+}
+
+/* ===== BARRA DE BÚSQUEDA ===== */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.7rem 0.875rem;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  max-width: none;
+  height: auto;
+  text-align: left;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.results-count {
+  font-size: 0.85rem;
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+/* ===== TABLA ===== */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  background-color: var(--surface-color);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+  opacity: 0.7;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.data-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-table tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tag-folio {
+  font-family: monospace;
+  font-size: 0.83rem;
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--accent-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-critico {
+  font-size: 0.78rem;
+  background-color: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.empty-row td {
+  text-align: center;
+  opacity: 0.45;
+  padding: 2rem 1rem;
+}

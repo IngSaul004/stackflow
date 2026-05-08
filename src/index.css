@@ -3,13 +3,14 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* Colores base para Modo Oscuro (por defecto) */
   color-scheme: light dark;
-  --bg-color: #0f172a;
+
+  /* Modo oscuro (por defecto) */
+  --bg-color:      #0f172a;
   --surface-color: #1e293b;
-  --text-primary: #f1f5f9;
-  --accent-color: #38bdf8; /* Cyan brillante para dark mode */
-  --accent-hover: #0ea5e9;
+  --text-primary:  #f1f5f9;
+  --accent-color:  #38bdf8;
+  --accent-hover:  #0ea5e9;
 
   color: var(--text-primary);
   background-color: var(--bg-color);
@@ -20,15 +21,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modo Claro */
+/* Modo claro */
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #ffffff;
-    --surface-color: #f8fafc;
-    --text-primary: #1b365d;
-    --accent-color: #2a7de1; /* Azul corporativo */
-    --accent-hover: #1b365d;
+    --bg-color:      #f1f5f9;
+    --surface-color: #ffffff;
+    --text-primary:  #1b365d;
+    --accent-color:  #2a7de1;
+    --accent-hover:  #1b365d;
   }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -45,15 +50,11 @@ a {
   text-decoration: inherit;
   transition: color 0.25s;
 }
+a:hover { color: var(--accent-hover); }
 
-a:hover {
-  color: var(--accent-hover);
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4 {
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
 button {
@@ -64,17 +65,17 @@ button {
   font-weight: 600;
   font-family: inherit;
   background-color: var(--accent-color);
-  color: white; /* Texto blanco siempre en botones para contraste */
+  color: white;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: background-color 0.25s, border-color 0.25s;
 }
 
 button:hover {
   background-color: var(--accent-hover);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-button:focus,
 button:focus-visible {
-  outline: 4px auto var(--accent-color);
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
 }
