@@ -1,59 +1,81 @@
+import { useState } from 'react'
 import './App.css'
 import logoimg from './assets/logo.png'
-import Dashboard from './dashboard'
-import { useState } from 'react'
+import Dashboard from './Dashboard'
+import { login, logout, getSession } from './services/auth'
 
 function App() {
-  const [usuario, setUsuario] = useState('')
-  const [contrasena, setContrasena] = useState('')
-  const [logueado, setLogueado] = useState(false)
+  const [usuario, setUsuario]         = useState(() => getSession())
+  const [usernameInput, setUsername]  = useState('')
+  const [passwordInput, setPassword]  = useState('')
+  const [error, setError]             = useState('')
+  const [loading, setLoading]         = useState(false)
 
   function inicioSesion(e) {
-    e.preventDefault() 
+    e.preventDefault()
+    setError('')
+    setLoading(true)
 
-    const usuarioValido = 'admin'
-    const contrasenaValida = 'admin123'
+    // Pequeño delay para simular validación
+    setTimeout(() => {
+      const result = login(usernameInput, passwordInput)
+      if (result.ok) {
+        setUsuario(result.user)
+      } else {
+        setError(result.error)
+      }
+      setLoading(false)
+    }, 400)
+  }
 
-    if (
-      usuario === usuarioValido &&
-      contrasena === contrasenaValida
-    ) {
-      setLogueado(true) 
-    } else {
-      alert('Usuario o contraseña incorrectos')
-    }
+  function cerrarSesion() {
+    logout()
+    setUsuario(null)
+    setUsername('')
+    setPassword('')
+    setError('')
+  }
+
+  if (usuario) {
+    return <Dashboard usuario={usuario} onLogout={cerrarSesion} />
   }
 
   return (
-    <>
-      {logueado ? (
-        <Dashboard />
-      ) : (
-        <div className='inicioSesion'>
-          <img src={logoimg} alt="Logo" />
-          <h1>Salidas Almacen</h1>
-          <h2>Bienvenid@</h2>
+    <div className="login-wrapper">
+      <div className="inicioSesion">
+        <img src={logoimg} alt="Logo STACKFLOW" />
+        <h1>STACKFLOW</h1>
+        <p className="login-subtitle">Control de Salidas de Almacén</p>
 
-          <form onSubmit={inicioSesion}>
-            <input
-              type="text"
-              placeholder="Usuario"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
-            />
+        {error && <div className="login-error">{error}</div>}
 
-            <input
-              type="password"
-              placeholder="Contraseña"
-              value={contrasena}
-              onChange={(e) => setContrasena(e.target.value)}
-            />
+        <form onSubmit={inicioSesion}>
+          <input
+            type="text"
+            placeholder="Usuario"
+            value={usernameInput}
+            onChange={e => setUsername(e.target.value)}
+            autoComplete="username"
+            disabled={loading}
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={passwordInput}
+            onChange={e => setPassword(e.target.value)}
+            autoComplete="current-password"
+            disabled={loading}
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? 'Verificando...' : 'Iniciar Sesión'}
+          </button>
+        </form>
 
-            <button type="submit">Iniciar Sesión</button>
-          </form>
-        </div>
-      )}
-    </>
+        <p className="login-hint">
+          admin / admin123 &nbsp;·&nbsp; almacenista / almacen2024
+        </p>
+      </div>
+    </div>
   )
 }
 
