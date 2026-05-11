@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login/Login'
-import Dashboard from './pages/Dashboard/Dashboard'
-import Productos from './pages/Productos/Productos'
-import Salidas from './pages/Salidas/Salidas'
+import Dashboard from './pages/dashboard/dashboard'
+import Productos from './pages/productos/productos'
+import Salidas from './pages/salidas/salidas'
+import Historial from './pages/historial/historial'
+import Reportes from './pages/reportes/reportes'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 function App() {
@@ -18,6 +20,12 @@ function App() {
         } />
         <Route path="/salidas" element={
           <ProtectedRoute><Salidas /></ProtectedRoute>
+        } />
+        <Route path="/historial" element={
+          <ProtectedRoute><Historial /></ProtectedRoute>
+        } />
+        <Route path="/reportes" element={
+          <ProtectedRoute><Reportes /></ProtectedRoute>
         } />
       </Routes>
     </BrowserRouter>

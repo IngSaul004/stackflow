@@ -1,0 +1,93 @@
+.filtro-card {
+  background: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtro-card label {
+  font-weight: 600;
+  color: #333;
+}
+
+.filtro-card input[type="date"] {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.btn-limpiar {
+  background: transparent;
+  border: 1px solid #e53935;
+  color: #e53935;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-limpiar:hover {
+  background-color: #e53935;
+  color: white;
+}
+
+.tabla-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.tabla-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.total {
+  color: #1a73e8;
+  font-weight: 400;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead {
+  background-color: #1a73e8;
+  color: white;
+}
+
+th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.85rem 1rem;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f8ff;
+}
+
+tbody tr:hover {
+  background-color: #e8f0fe;
+}
+
+.sin-datos {
+  color: #aaa;
+  font-style: italic;
+}
